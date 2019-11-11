@@ -49,8 +49,8 @@ NTP.prototype.time = function (callback) {
     if (err) return callback(err);
     this.socket.once('message', data => {
       this.socket.close();
-      const message = NTP.parse(data);
-      callback(err, message);
+      // const message = NTP.parse(data);
+      callback(err, data);
     });
   });
   return this;
